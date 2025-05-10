@@ -1,0 +1,98 @@
+# Project definitions (do not edit)
+Task: OKR_MICROBEADS_BASELINE
+scorer: JAG
+date: Apr30
+multianimalproject: false
+identity:
+
+
+# Project path (change when moving around)
+project_path: /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30
+
+
+# Default DeepLabCut engine to use for shuffle creation (either pytorch or tensorflow)
+engine: pytorch
+
+
+# Annotation data set configuration (and individual video cropping parameters)
+video_sets:
+  ? /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30/videos/eye_recording_20250424_192113_0007_stack_export.mp4
+  : crop: 0, 200, 0, 200
+  ? /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30/videos/eye_recording_20250424_111434_0004_stack_export.mp4
+  : crop: 0, 200, 0, 200
+  ? /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30/videos/eye_recording_20250424_104125_0002_stack_export.mp4
+  : crop: 0, 200, 0, 200
+  ? /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30/videos/eye_recording_20250424_175700_0002_stack_export.mp4
+  : crop: 0, 200, 0, 200
+  ? /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30/videos/eye_recording_20250424_113243_0006_stack_export.mp4
+  : crop: 0, 200, 0, 200
+  ? /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30/videos/eye_recording_20250424_190436_0006_stack_export.mp4
+  : crop: 0, 200, 0, 200
+  ? /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30/videos/eye_recording_20250424_193752_0008_stack_export.mp4
+  : crop: 0, 200, 0, 200
+  ? /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30/videos/eye_recording_20250424_120209_0002_stack_export.mp4
+  : crop: 0, 200, 0, 200
+  ? /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30/videos/eye_recording_20250424_183007_0004_stack_export.mp4
+  : crop: 0, 200, 0, 200
+  ? /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30/videos/eye_recording_20250424_181352_0003_stack_export.mp4
+  : crop: 0, 200, 0, 200
+  ? /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30/videos/eye_recording_20250424_102517_0001_stack_export.mp4
+  : crop: 0, 200, 0, 200
+  ? /home/jg/Desktop/DLC_torch_projects/OKR_MICROBEADS_BASELINE-JAG-2025-04-30/videos/eye_recording_20250424_184625_0005_stack_export.mp4
+  : crop: 0, 200, 0, 200
+bodyparts:
+- pupil_center
+- pupil_left_edge
+- pupil_right_edge
+- pupil_top_edge
+- pupil_bottom_edge
+
+# Fraction of video to start/stop when extracting frames for labeling/refinement
+start: 0
+stop: 1
+numframes2pick: 20
+
+
+# Plotting configuration
+skeleton:
+  - [pupil_left_edge, pupil_center]
+  - [pupil_right_edge, pupil_center]
+  - [pupil_top_edge, pupil_center]
+  - [pupil_bottom_edge, pupil_center]
+skeleton_color: black
+pcutoff: 0.6
+dotsize: 2
+alphavalue: 0.7
+colormap: rainbow
+
+
+# Training,Evaluation and Analysis configuration
+TrainingFraction:
+- 0.95
+iteration: 0
+default_net_type: resnet_101
+default_augmenter: default
+snapshotindex: -1
+detector_snapshotindex: -1
+batch_size: 8
+detector_batch_size: 1
+
+
+# Cropping Parameters (for analysis and outlier frame detection)
+cropping: false
+#if cropping is true for analysis, then set the values here:
+x1: 0
+x2: 200
+y1: 0
+y2: 200
+
+
+# Refinement configuration (parameters from annotation dataset configuration also relevant in this stage)
+corner2move2:
+- 50
+- 50
+move2corner: true
+
+
+# Conversion tables to fine-tune SuperAnimal weights
+SuperAnimalConversionTables:
